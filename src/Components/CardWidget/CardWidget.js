@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import carrito from "../../Assets/carrito.png";
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import IconButton from '@material-ui/core/IconButton';
+import "./CardWidget.scss";
 import PropTypes from 'prop-types'
 
 export class CardWidget extends Component {
@@ -7,10 +11,11 @@ export class CardWidget extends Component {
     }
 
     render() {
-        return (
-            <div>
-                
-            </div>
+        return (            
+                // <img src={carrito} className="card-widget-car" alt="Carrito de compras" />               
+                <ShoppingCartIcon/>
+             
+            
         )
     }
 }
