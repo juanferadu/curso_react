@@ -1,11 +1,9 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-// import Button from '@material-ui/core/Button';
 import IconButton from "@material-ui/core/IconButton";
-import { FormControl, MenuItem, Menu, Button } from "@material-ui/core";
+import { MenuItem, Menu, Button } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import "./NavBar.scss";
 import CardWidget from "./CardWidget/CardWidget";
@@ -58,14 +56,14 @@ function NavBar() {
           <Button color="inherit">
             Login
           </Button>
-          {/* <IconButton
+          <IconButton
             edge="end"
             className="nav-bar__menuButton"
             color="inherit"
             aria-label="menu"
           >
             <CardWidget />
-          </IconButton> */}
+          </IconButton>
           </div>
           
         </Toolbar>

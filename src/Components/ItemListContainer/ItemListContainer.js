@@ -1,18 +1,15 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
+import "./ItemListContainer.scss";
 
-export class ItemListContainer extends Component {
-    static propTypes = {
+function ItemListContainer(props) {
 
-    }
-
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+    const{ saludo } = props;
+    return (
+        <div className="item-list-container">
+             <h2> {saludo} </h2>
+        </div>
+    )
 }
 
 export default ItemListContainer
+
