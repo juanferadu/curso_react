@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount';
+import ItemList from '../ItemList/ItemList';
 import "./ItemListContainer.scss";
 
 function ItemListContainer(props) {
 
     const [stockActual, setstockActual] = useState(10)
     
-    const{ saludo } = props;
+    const{ saludo, items } = props;
 
     const restarStock = (e, nuevoStock)=> {
         e.preventDefault();
@@ -22,8 +23,12 @@ function ItemListContainer(props) {
     };
     return (
         <div className="item-list-container">
+            <h1>Contenedor</h1>
              <h2> {saludo} </h2>
-             <ItemCount stock={stockActual} initial={1} onAdd={restarStock}/>            
+             {/* <ItemCount stock={stockActual} initial={1} onAdd={restarStock}/>   
+             <br/> */}
+             <hr/> 
+             <ItemList items={items}/>        
         </div>
     )
 }

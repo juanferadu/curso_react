@@ -1,0 +1,23 @@
+.item{
+    &_root {
+        min-width: 275px;
+      }
+      &_bullet {
+        display: 'inline-block';
+        margin:  '0 2px';
+        transform: 'scale(0.8)';
+      }
+      &_title {
+        font-size: 14;
+      }
+      &_pos {
+        margin-bottom: 12px;
+        margin-top: 10px;
+        text-align: right;
+      }     
+      img {
+        width: 100px;
+        margin-right: 20px;
+      }
+
+}
