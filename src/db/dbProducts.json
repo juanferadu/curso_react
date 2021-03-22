@@ -1,0 +1,60 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "title": "Polera Niño",
+            "description": "Polera verano con logo",
+            "price": 6800,
+            "pictureUrl": "polera_nino.png"
+        },
+        {
+            "id": 2,
+            "title": "short Niño T16",
+            "description": "short verano con cinturón",
+            "price": 8900,
+            "pictureUrl": "short_nino.png"
+        },
+        {
+            "id": 3,
+            "title": "traje de baño Niño T16",
+            "description": "traje de baño hawaiano",
+            "price": 7500,
+            "pictureUrl": "traje_bano_nino.png"
+        },
+        {
+            "id": 4,
+            "title": "Lentes Amarillo de Bambu ",
+            "description": "Lentes polarizados protección UV",
+            "price": 7500,
+            "pictureUrl": "lentes_amarillo_bambu.png"
+        },
+        {
+            "id": 5,
+            "title": "Lentes Verde de Bambu ",
+            "description": "Lentes polarizados protección UV",
+            "price": 7500,
+            "pictureUrl": "lentes_verde_bambu.png"
+        },
+        {
+            "id": 6,
+            "title": "Lentes Azul ",
+            "description": "Lentes polarizados protección UV",
+            "price": 7500,
+            "pictureUrl": "lentes_azul_hombre.png"
+        },
+        {
+            "id": 7,
+            "title": "Lente azul  de bambu",
+            "description": "Lentes polarizados protección UV de bambu",
+            "price": 7500,
+            "pictureUrl": "lentes_azul_bambu.png"
+        },
+        {
+            "id": 8,
+            "title": "Lentes negro de bambu",
+            "description": "Lentes polarizados protección UV de bambu",
+            "price": 7500,
+            "pictureUrl": "lentes_negro_bambu.png"
+        }
+]
+}

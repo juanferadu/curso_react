@@ -1,23 +1,24 @@
 .item{
-    &_root {
-        min-width: 275px;
+  padding: 0;
+  .card{
+    margin: 15px;
+    .card-title {
+      height: 50px;
+    }
+    .btn{
+      width: 100%;
+      background-color: transparent;
+      color: #0098d3;
+      border-color: #0098d3;
+      border-radius: 50px;
+      &:hover,
+      &:active,
+      &:focus{
+        background-color: #0098d3;
+        color: #fff;
+        border-color: #0098d3;
+        box-shadow: none !important;
       }
-      &_bullet {
-        display: 'inline-block';
-        margin:  '0 2px';
-        transform: 'scale(0.8)';
-      }
-      &_title {
-        font-size: 14;
-      }
-      &_pos {
-        margin-bottom: 12px;
-        margin-top: 10px;
-        text-align: right;
-      }     
-      img {
-        width: 100px;
-        margin-right: 20px;
-      }
-
+    }
+  }
 }

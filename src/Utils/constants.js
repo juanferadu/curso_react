@@ -1,0 +1,1 @@
+export const urlApiProducts = "http://localhost:3000/productos";
