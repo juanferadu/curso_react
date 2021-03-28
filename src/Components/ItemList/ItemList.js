@@ -5,7 +5,7 @@ import { Container, Row } from 'react-bootstrap'
 
 function ItemList(props) {
    
-    //console.log(props.items)
+    //console.log('itemList',props.items)
     return (
         <Container>
                 <Row>                    

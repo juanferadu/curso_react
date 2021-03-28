@@ -6,7 +6,8 @@
       height: 50px;
     }
     .btn{
-      width: 100%;
+      width: 80%;
+      justify-content: center;
       background-color: transparent;
       color: #0098d3;
       border-color: #0098d3;
@@ -22,3 +23,11 @@
     }
   }
 }
+
+// .center {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 200px;
+//   border: 3px solid green;
+// }

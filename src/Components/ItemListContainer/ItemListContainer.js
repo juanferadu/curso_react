@@ -1,49 +1,50 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
+import { productos } from "../../db/dbProducts.json";
 import "./ItemListContainer.scss";
+import Loading from '../Loading/Loading';
 
 function ItemListContainer(props) {
 
     const [items, setItems] = useState([]);
-    const [stockActual, setstockActual] = useState(10);
-    
+    const {id} = useParams();
+       
     // const{ saludo, productos } = props;
 
     useEffect(() => {
         new Promise((resolve, reject) => {
-    
-        const datos = props.productos;
-    
-        //console.log(datos);
-    
+          setItems([]);     
           setTimeout(() => {
-            resolve(datos);        
+            if(id)
+            {
+              resolve(productos.filter( prod =>  prod.category=== id));              
+            }
+            else{
+              resolve(productos); 
+            }
+                   
           }, 2000);      
-        }).then(resultado=>{setItems(resultado)}) 
+        }).then(resultado=>{setItems(resultado);
+          //console.log('resultado',resultado);
+        }); 
         
-      }, [])
+      }, [id])
 
-    const restarStock = (e, nuevoStock)=> {
-        e.preventDefault();
-        if(stockActual >= nuevoStock)
-        {
-            setstockActual((stockActual)=> stockActual - nuevoStock)
-        }
-        else
-        {
-            alert("No existe stock de este producto!");
-        }
-        
-    };
+    
     return (
         <div className="item-list-container">
-            <h1>Contenedor</h1>
+            {/* <h1>Contenedor</h1> */}
              <h2> {props.saludo} </h2>
              {/* <ItemCount stock={stockActual} initial={1} onAdd={restarStock}/>   
              <br/> */}
              <hr/> 
-             <ItemList items={items}/>        
+                  
+             { items.length == 0 ? <Loading/>:
+              <ItemList items={items}/>    
+             }
+                
         </div>
     )
 }

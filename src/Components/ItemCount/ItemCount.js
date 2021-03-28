@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { useState, useEffect } from 'react'
+// import PropTypes from 'prop-types'
+// import { useState, useEffect } from 'react'
 import { TextField, Button } from '@material-ui/core';
 
 function ItemCount({stock, initial, onAdd}) {

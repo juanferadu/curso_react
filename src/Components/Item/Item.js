@@ -1,16 +1,16 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap'
 import "./Item.scss";
-import {
-  Link
-} from "react-router-dom";
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import {Link} from "react-router-dom";
+import { BASE_PATH } from "../../Utils/constants";
 
 function Item(props) {
 
   const { id, title, description, price, pictureUrl } = props;
 
-  const path = `images/${pictureUrl}`;
+  const path = `${BASE_PATH}/images/${pictureUrl}`;
+
+  //console.log(path);
 
   return (
     <Col xs={3} className="item">
@@ -18,17 +18,17 @@ function Item(props) {
         <Card.Img variant="top" src={path}></Card.Img>
         <Card.Body>
           <Card.Title>{id} {title}</Card.Title>
-          {/* <Card.Text>{description}</Card.Text>
-          <Card.Text>{price} clp/unidades</Card.Text> */}
-               {/* {`/item/:${id}`} */}
-           <Link to={`/item/:${id}`}>
+          <Card.Text>{description}</Card.Text>
+          <Card.Text>{price} clp/unidades</Card.Text> 
+                {/* {`/item/:${id}`} */}            
+          {/* <ItemDetailContainer propiedad={props}/> */}
+        </Card.Body>       
+        <Link to={`/item/${id}`}>
               <Button type="button">
                     Ver Detalle
               </Button>
-          </Link>         
-          {/* <ItemDetailContainer propiedad={props}/> */}
-        </Card.Body>
-      </Card>
+          </Link>     
+      </Card>         
     </Col>
     
   );

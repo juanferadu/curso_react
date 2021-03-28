@@ -6,7 +6,10 @@ import IconButton from "@material-ui/core/IconButton";
 import { MenuItem, Menu, Button } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import "./NavBar.scss";
-import CardWidget from "./CardWidget/CardWidget";
+import CardWidget from "../CardWidget/CardWidget";
+import {
+  Link
+} from "react-router-dom";
 
 function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -44,9 +47,10 @@ function NavBar() {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>Accesorios Hombre</MenuItem>
-              <MenuItem onClick={handleClose}>Accesorios Mujer</MenuItem>
-              <MenuItem onClick={handleClose}>Accesorios Niños</MenuItem>
+              <MenuItem><Link to="/">Home</Link></MenuItem>
+              <MenuItem><Link to="/category/man">Accesorios Hombre</Link></MenuItem>
+              <MenuItem><Link to="/category/woman">Accesorios Mujer</Link></MenuItem>
+              <MenuItem><Link to="/category/kid">Accesorios Niños</Link></MenuItem>
             </Menu>
           </IconButton>
           <Typography variant="h6" className="nav-bar__title">
