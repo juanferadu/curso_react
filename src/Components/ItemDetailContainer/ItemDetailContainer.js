@@ -5,18 +5,13 @@ import { productos } from "../../db/dbProducts.json";
 import {useParams} from "react-router-dom";
 import useFetch from '../../Hooks/useFetch';
 import Loading from '../Loading/Loading';
+import "./ItemDetailContainer.scss";
 
 
 function ItemDetailContainer() {
 
     let { id } = useParams();
     const [detail, setDetail] = useState([]);    
-
-    console.log('item id', id);
-    // console.log('productos:',productos);
-
-    // const products = useFetch("");
-    //console.log('item detail:',productos);
 
     useEffect(() => {
       new Promise((resolve, reject) => {   
@@ -41,17 +36,16 @@ function ItemDetailContainer() {
     return (     
         <div className="item-detail-container">                  
            <h1>Detalle del Producto</h1>
-           <Container >
-             <Row>
+           <Container>            
              { detail.length === 0 ? <Loading/>:
                detail.map( item =>
                 <ItemDetail key={item.id} {...item}/>
-            )}
-              {/* <ItemDetail detalle={detail} />  */}
-                           
-             </Row>
+            )}         
+            
            </Container>       
-        </div>           
+            {/* <ItemDetail detalle={detail} />  */}  
+        </div>         
+       
     );
 }
 

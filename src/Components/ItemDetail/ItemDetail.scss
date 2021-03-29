@@ -1,11 +1,15 @@
 .item-detail{
     padding: 0;
+    align-items: center;
+    justify-content: center;
     .card{
       margin: 15px;
+      width: '18rem';     
       .card-title {
-        height: 50px;
-        background-color: #0098d3 !important;
-        color: #fff !important;
+        height: 30px;      
+      }
+      .card-text {
+        height: 30px;      
       }
       .btn{
         width: 100%;

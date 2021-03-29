@@ -18,16 +18,12 @@ function Item(props) {
         <Card.Img variant="top" src={path}></Card.Img>
         <Card.Body>
           <Card.Title>{id} {title}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-          <Card.Text>{price} clp/unidades</Card.Text> 
-                {/* {`/item/:${id}`} */}            
-          {/* <ItemDetailContainer propiedad={props}/> */}
-        </Card.Body>       
-        <Link to={`/item/${id}`}>
-              <Button type="button">
-                    Ver Detalle
-              </Button>
-          </Link>     
+          {/* <Card.Text>{description}</Card.Text> */}
+          <Card.Text>{price} clp/unidades</Card.Text>              
+        </Card.Body>             
+          <Link to={`/item/${id}`}>
+                        <Button type="primary">Ver Detalle</Button>
+          </Link>
       </Card>         
     </Col>
     
