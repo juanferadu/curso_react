@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import "./CardWidget.scss";
-import PropTypes from 'prop-types'
+import {Link} from "react-router-dom";
 
 export class CardWidget extends Component {
     static propTypes = {
@@ -9,8 +9,11 @@ export class CardWidget extends Component {
     }
 
     render() {
-        return (                                      
-                <ShoppingCartIcon/>    
+        return (               
+                <Link to="/cart">
+                         <ShoppingCartIcon/>    
+                </Link>                       
+               
             
         )
     }

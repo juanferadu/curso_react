@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
 import { productos } from "../db/dbProducts.json";
-
-import React from 'react'
-
 export default function useFetch(url, options) {
 
     const [loading, setLoading] = useState(true);

@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { Container, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { productos } from "../../db/dbProducts.json";
 import {useParams} from "react-router-dom";
-import useFetch from '../../Hooks/useFetch';
 import Loading from '../Loading/Loading';
 import "./ItemDetailContainer.scss";
 
 
 function ItemDetailContainer() {
 
-    let { id } = useParams();
+    const { id } = useParams();
     const [detail, setDetail] = useState([]);    
 
     useEffect(() => {

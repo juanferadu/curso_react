@@ -6,7 +6,7 @@ import { BASE_PATH } from "../../Utils/constants";
 
 function Item(props) {
 
-  const { id, title, description, price, pictureUrl } = props;
+  const { id, title, price, pictureUrl } = props;
 
   const path = `${BASE_PATH}/images/${pictureUrl}`;
 
