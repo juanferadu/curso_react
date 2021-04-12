@@ -65,9 +65,9 @@ function NavBar() {
             className="nav-bar__menuButton"
             color="inherit"
             aria-label="menu"
-          >
-            <CardWidget />
+          >           
           </IconButton>
+          <CardWidget />
           </div>
           
         </Toolbar>

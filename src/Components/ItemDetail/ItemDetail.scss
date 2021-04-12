@@ -5,6 +5,11 @@
     .card{
       margin: 15px;
       width: '18rem';     
+      .card-img-top{
+        width: 75% !important;
+        height: 40%;
+        justify-content: center;
+      }
       .card-title {
         height: 30px;      
       }

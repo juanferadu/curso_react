@@ -14,17 +14,21 @@ function Cart() {
 
     //const { item: { id, title, price }, quantity } = cart //destructuring
 
-    const total = 0;//cart.reduce((cart) => cart.item.price * cart.quantity, 0);
+    var total = 0;
 
-    // const total = cart.map((cart, index) => {
+    if (cart.length > 0) {
+        total = cart.reduce((sum, x) => sum + (x.quantity * x.item.price), 0);
 
-    //    return cart.item.price * cart.quantity
+    }
 
-    // });
+    const NewOrder = {
+
+        
+    }
+
 
     return (
         <div className="cart">
-            Estamos en carrito de compras!
             <Grid container spacing={3}>
 
                 <Grid item xs={8}>
@@ -32,7 +36,7 @@ function Cart() {
                         <Table striped bordered hover variant="dark">
                             <thead>
                                 <tr>
-                                    <th>Código</th>
+                                    <th hidden="true">Código</th>
                                     <th>Producto</th>
                                     <th>Precio</th>
                                     <th>Cantidad</th>
@@ -40,26 +44,33 @@ function Cart() {
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>                               
-                                { cart.length > 0? cart.map((cart, index)=>
+                            <tbody>
+                                {cart.length > 0 ? cart.map((cart, index) =>
                                     <tr key={index}>
-                                        <td>{cart.item.id}</td>
+                                        <td hidden="true">{cart.item.id}</td>
                                         <td>{cart.item.title}</td>
                                         <td>{cart.item.price}</td>
                                         <td>{cart.quantity}</td>
                                         <td>{cart.quantity * cart.item.price}</td>
                                         <td> <Button variant="danger" onClick={(e) => { removeItem(cart.item.id) }}>
-                                        Eliminar
+                                            Quitar
                                     </Button>
-                                    </td>
+                                        </td>
                                     </tr>
-                                     ):
+                                ) :
                                     <tr>
                                         <td colSpan="5">
                                             No hay productos agregados
                                         </td>
+                                        <td>
+                                            <Link to="/">
+                                                <Button variant="danger">
+                                                    Regresar
+                                    </Button>
+                                            </Link>
+                                        </td>
                                     </tr>
-                               }
+                                }
                             </tbody>
                         </Table>
 
@@ -68,35 +79,28 @@ function Cart() {
                 <Grid item xs={4}>
                     <Paper className="cart__paper">
                         <h2>Detalle Pago</h2>
-                        <Table striped bordered hover size="sm">                            
+                        <Table striped bordered hover size="sm">
                             <tbody>
-                                <tr>
-                                    <td>Total a Pagar:</td>
-                                    <td>{total}</td>
-                                    <td></td>                                   
+                                <tr style={{ fontSize: 25, fontWeight: "bold" }}>
+                                    <td>Total:</td>
+                                    <td colSpan="2">{total}</td>
                                 </tr>
                                 <tr>
-                                    <td> <Button type="button" onClick={(e) => { clear() }}>
+                                    <td> 
+                                    </td>
+                                    <td>
+                                    <Button style={{ marginRight: '15px'}} type="button" onClick={(e) => { clear() }}>
                                         Vaciar
                                     </Button>
-                                    </td>
-                                    <td>
-                                                <Link to="/">
-                                        <Button type="button">
-                                            Regresar
-                                    </Button>
-                                    </Link>
-                                    </td>
-                                    <td>
                                     <Button type="button">
-                                        Pagar
+                                            Pagar
                                     </Button>
-                                    </td>                                    
+                                    </td>                                   
                                 </tr>
                             </tbody>
                         </Table>
-                    
-                        
+
+
                     </Paper>
                 </Grid>
             </Grid>

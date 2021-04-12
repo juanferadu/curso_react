@@ -5,6 +5,7 @@ import { productos } from "../../db/dbProducts.json";
 import {useParams} from "react-router-dom";
 import Loading from '../Loading/Loading';
 import "./ItemDetailContainer.scss";
+import { getFirestore } from "../../configs/firebase";
 
 
 function ItemDetailContainer() {
@@ -13,23 +14,32 @@ function ItemDetailContainer() {
     const [detail, setDetail] = useState([]);    
 
     useEffect(() => {
-      new Promise((resolve, reject) => {   
-  
-        setTimeout(() => {
-          if(id)
-          {
-            resolve(productos.filter(prod =>  prod.id == id));   
-            //resolve({id:1, title:'Polera Niño', description:'Polera verano con logo', price: 6800 , pictureUrl : 'polera_nino.png'});                    
-          }
-          else
-          {
-            alert('Hubo un error')
-          }                
-         
-        }, 2000);      
-      }).then(resultado=>{
-        setDetail(resultado);       
-      })       
+
+      const db = getFirestore();
+      var dataCollection = null;
+      if(id)
+      {
+        dataCollection =  db.collection(`productos`).where("id", "==", `${id}`);    
+        console.log(dataCollection);   
+      }
+      else
+      {
+        alert("Hubo un error");
+      }
+     
+      dataCollection
+      .get()
+      .then((resp) => {
+        if (resp.size === 0) {        
+          setDetail(null);         
+        }else{         
+          const datos = resp.docs.map(doc => doc.data());
+          setDetail(datos);          
+        }        
+      })
+      .catch((err) => {
+          console.log(err);         
+      }); 
     }, [id])
 
     return (     
@@ -41,8 +51,7 @@ function ItemDetailContainer() {
                 <ItemDetail key={item.id} {...item}/>
             )}         
             
-           </Container>       
-            {/* <ItemDetail detalle={detail} />  */}  
+           </Container>               
         </div>         
        
     );

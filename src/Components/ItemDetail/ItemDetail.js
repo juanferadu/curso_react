@@ -1,4 +1,4 @@
-import React,{useState, useEffect, useContext} from 'react'
+import React,{useState, useContext} from 'react'
 import { Card, Button } from 'react-bootstrap'
 import {BASE_PATH} from '../../Utils/constants';
 import {Link} from "react-router-dom";
@@ -9,25 +9,15 @@ import CartContext from '../../Cart/CartContext';
 function ItemDetail(props) {
 
     const context = useContext(CartContext);
-
-    //console.log(context.cart);
-
-    //const { detalle} = props;
+   
     const {cart, addItem } = context;
 
     const { id, title, description, price, pictureUrl, stock } = props;
     const prod = {id, title, price}
 
     const [stockActual, setstockActual] = useState(stock);   
-    // const [cantidad, setCantidad] = useState([]);
-
-    //console.log(cantidad)
-    
-    const path = `${BASE_PATH}/images/${pictureUrl}`;
-
-    useEffect(() => {
-        document.title = `Cantidad ${cart.quantity}`;
-    }, [cart])
+      
+    const path = `${BASE_PATH}/images/${pictureUrl}`; 
 
     const onAdd =(c)=>{
 
@@ -67,7 +57,7 @@ function ItemDetail(props) {
                     }                   
                     <Link to="/">
                         <Button type="button">
-                            Regresar
+                            Seguir Comprando
                         </Button>
                     </Link>
             </Card.Body>
