@@ -28,7 +28,7 @@ function ItemListContainer(props) {
       .get()
       .then((resp) => {
         if (resp.size === 0) {         
-          setItems( null);         
+          setItems([]);         
         }else{         
           const datos = resp.docs.map(doc => doc.data());
           setItems(datos);          

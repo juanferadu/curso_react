@@ -20,7 +20,7 @@ function ItemDetailContainer() {
       if(id)
       {
         dataCollection =  db.collection(`productos`).where("id", "==", `${id}`);    
-        console.log(dataCollection);   
+        //console.log(dataCollection);   
       }
       else
       {
@@ -31,7 +31,7 @@ function ItemDetailContainer() {
       .get()
       .then((resp) => {
         if (resp.size === 0) {        
-          setDetail(null);         
+          setDetail([]);         
         }else{         
           const datos = resp.docs.map(doc => doc.data());
           setDetail(datos);          

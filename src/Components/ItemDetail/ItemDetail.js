@@ -17,7 +17,7 @@ function ItemDetail(props) {
 
     const [stockActual, setstockActual] = useState(stock);   
       
-    const path = `${BASE_PATH}/images/${pictureUrl}`; 
+    //const path = `${BASE_PATH}/images/${pictureUrl}`; 
 
     const onAdd =(c)=>{
 
@@ -42,7 +42,7 @@ function ItemDetail(props) {
         <div className="item-detail">
         <Card style={{ width: '25rem'}}>
             <Card.Header>{title}</Card.Header>
-            <Card.Img variant="top" src={path}></Card.Img>
+            <Card.Img variant="top" src={pictureUrl}></Card.Img>
             <Card.Body>
                 {/* <Card.Title>{title}</Card.Title> */}                
                 <Card.Text>{description}</Card.Text>

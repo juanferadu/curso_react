@@ -8,12 +8,12 @@ function Item(props) {
 
   const { id, title, price, pictureUrl } = props;
 
-  const path = `${BASE_PATH}/images/${pictureUrl}`;
+  //const path = `${BASE_PATH}/images/${pictureUrl}`;
 
   return (
     <Col xs={3} className="item">
       <Card>
-        <Card.Img variant="top" src={path}></Card.Img>
+        <Card.Img variant="top" src={pictureUrl}></Card.Img>
         <Card.Body>
           <Card.Title>{title}</Card.Title>         
           <Card.Text>{price} clp/unidades</Card.Text>              
