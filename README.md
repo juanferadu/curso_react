@@ -16,6 +16,9 @@ npm install
 Después levantamos la aplicación:
 
 npm start
+
+Luego podemos observar en el navegador http://localhost:3000/ nuestra app ejecutarse.
+
 ```
 
 ## Librerías Usadas
